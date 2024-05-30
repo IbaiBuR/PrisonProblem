@@ -12,7 +12,7 @@ namespace box
 {
     inline auto init() -> std::array<u8, 100>
     {
-        std::mt19937 rng(std::random_device{}());
+        static std::mt19937 rng(std::random_device{}());
         std::array<u8, 100> box{};
 
         std::iota(box.begin(), box.end(), 0);
