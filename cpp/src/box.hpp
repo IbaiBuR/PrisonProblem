@@ -21,8 +21,18 @@ namespace box
         return box;
     }
 
+    inline auto init(std::mt19937_64& rng) -> std::array<u8, 100>
+    {
+        std::array<u8, 100> box{};
+
+        std::iota(box.begin(), box.end(), 0);
+        std::ranges::shuffle(box.begin(), box.end(), rng);
+
+        return box;
+    }
+
     template<bool verbose>
-    auto select(const std::array<u8, 100> box) -> bool
+    auto select(const std::array<u8, 100>& box) -> bool
     {
         for (int prisoner = 0; prisoner < 100; ++prisoner)
         {

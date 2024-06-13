@@ -7,6 +7,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-file(GLOB SRCS "src/*.cpp")
+file(GLOB SRCS "src/*.cpp" "src/*.hpp")
 
 add_executable(PrisonProblem ${SRCS})

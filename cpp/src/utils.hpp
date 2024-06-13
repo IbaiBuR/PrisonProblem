@@ -27,7 +27,7 @@ namespace utils
         std::println("=========================================");
     }
 
-    inline auto getTimeMs() -> long
+    inline auto get_time_ms() -> long
     {
         return std::chrono::duration_cast<std::chrono::milliseconds>(
                     std::chrono::steady_clock::now().time_since_epoch())
