@@ -6,5 +6,5 @@ An attempt to solve the [100 Prisoners Problem](https://en.wikipedia.org/wiki/10
 
 ## TODO
 
-- [ ] Make it multithreaded
+- [X] Make it multithreaded
 - [ ] Fix Zig version
