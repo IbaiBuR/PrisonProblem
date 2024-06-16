@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-#include <array>
 #include <chrono>
 #include <numeric>
 #include <print>
@@ -10,7 +9,7 @@
 
 namespace utils
 {
-    inline auto print_stats(const std::array<u8, RUNS>& reboots) -> void
+    inline auto print_stats(const std::vector<u8>& reboots) -> void
     {
         const auto total_reboots = std::accumulate(reboots.begin(), reboots.end(), 0);
         const auto avg_reboots = static_cast<double>(total_reboots) / static_cast<double>(reboots.size());
