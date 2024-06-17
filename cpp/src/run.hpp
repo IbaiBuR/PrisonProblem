@@ -41,7 +41,7 @@ namespace run
         {
             threads[i] = std::thread([&, i]() -> void
             {
-                thread_local std::mt19937_64 rng{std::random_device{}()};
+                thread_local std::mt19937 rng{std::random_device{}()};
 
                 for (auto j = i * RUNS / num_threads; j < (i + 1) * RUNS / num_threads; ++j)
                 {

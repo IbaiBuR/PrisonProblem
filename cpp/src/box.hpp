@@ -21,7 +21,7 @@ namespace box
         return box;
     }
 
-    inline auto init(std::mt19937_64& rng) -> std::array<u8, 100>
+    inline auto init(std::mt19937& rng) -> std::array<u8, 100>
     {
         std::array<u8, 100> box{};
 
