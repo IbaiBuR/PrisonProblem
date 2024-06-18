@@ -1,13 +1,18 @@
-CXX = g++
-CXXFLAGS = -O3 -use_fast_math -flto -DNDEBUG -march=native -mtune=native -Wall -Wextra -std=c++23
-EXE = prison_problem
+CXX     = g++
+SRCS    = src/*.cpp
 HEADERS = src/*.hpp
-SRCS = src/*.cpp
+
+STD      = -std=c++23
+WARNINGS = -Wall -Wextra -Wpedantic
+CXXFLAGS = -O3 -funroll-loops -flto=auto -DNDEBUG -march=native -mtune=native $(STD) $(WARNINGS)
+LDFLAGS  = -ltbb
+
+EXE = prison_problem
 
 .PHONY: all clean
 
 all:
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(EXE)
+	$(CXX) $(CXXFLAGS) $(SRCS) $(LDFLAGS) -o $(EXE)
 
 clean:
 	rm -f prison_problem
