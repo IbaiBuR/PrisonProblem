@@ -5,6 +5,7 @@
 #include <numeric>
 #include <print>
 #include <random>
+#include <span>
 
 #include "types.hpp"
 
@@ -32,7 +33,7 @@ namespace box
     }
 
     template<bool verbose>
-    auto select(const std::array<u8, 100>& box) -> bool
+    auto select(const std::span<const u8> box) -> bool
     {
         for (int prisoner = 0; prisoner < 100; ++prisoner)
         {
